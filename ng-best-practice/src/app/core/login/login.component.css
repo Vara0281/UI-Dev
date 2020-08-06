@@ -1,0 +1,15 @@
+.wrapper {
+  background: #696969;
+  max-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+}
+
+.card {
+  padding: 0;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f0f8ff;
+}

@@ -1,0 +1,75 @@
+<div class="wrapper">
+  <div class="card col-sm-9 col-md-5">
+    <div class="card-header">
+      <h3 class="text-center">Login</h3>
+    </div>
+    <div class="card-body">
+      <form #userForm="ngForm" (ngSubmit)="loginUser()">
+        <div class="form-group form-row">
+          <label for="email" class="col-md-3">Email</label>
+          <div class="col-md-8">
+            <input
+              id="email"
+              type="text"
+              class="form-control"
+              [class.is-invalid]="email.touched && email.invalid"
+              name="email"
+              #email="ngModel"
+              required
+              email
+              [(ngModel)]="user.email"
+            />
+            <div
+              class="text-danger"
+              *ngIf="email.invalid && (email.touched || email.dirty)"
+            >
+              <small *ngIf="email.errors['required']">
+                Email is required
+              </small>
+              <small *ngIf="email.errors['email']">
+                Invalid Email
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group form-row">
+          <label for="password" class="col-md-3">Password</label>
+          <div class="col-md-8">
+            <input
+              id="password"
+              type="password"
+              class="form-control"
+              [class.is-invalid]="password.touched && password.invalid"
+              name="password"
+              #password="ngModel"
+              required
+              minlength="5"
+              [(ngModel)]="user.password"
+            />
+            <div
+              class="text-danger"
+              *ngIf="password.invalid && (password.touched || password.dirty)"
+            >
+              <small *ngIf="password.errors['required']">
+                Password is required
+              </small>
+              <small *ngIf="password.errors['minlength']">
+                Minimum 5 Charecters is required
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button
+            type="button"
+            (click)="loginUser()"
+            class="btn btn-primary"
+            [disabled]="userForm.invalid"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

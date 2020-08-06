@@ -1,0 +1,183 @@
+{
+  "employees2": [
+    {
+      "id": 1,
+      "name": "Vinod",
+      "contactPreference": "phone",
+      "email": "vinod@gmail.com",
+      "phone": "9898098705",
+      "skills": [
+        {
+          "skillName": "Telicom",
+          "experienceInYears": "3",
+          "proficiency": "intermediate"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Pavan",
+      "contactPreference": "email",
+      "email": "pavan@gmail.com",
+      "phone": "9898098709",
+      "skills": [
+        {
+          "skillName": "SQL",
+          "experienceInYears": "6",
+          "proficiency": "advanced"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Naresh",
+      "contactPreference": "phone",
+      "email": "naresh@gmail.com",
+      "phone": "9999008900",
+      "skills": [
+        {
+          "skillName": "AWS",
+          "experienceInYears": "9",
+          "proficiency": "advanced"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Virat Kohli",
+      "contactPreference": "phone",
+      "email": "viratKohli@gmail.com",
+      "phone": "9898098709",
+      "skills": [
+        {
+          "skillName": "Games",
+          "experienceInYears": "11",
+          "proficiency": "advanced"
+        },
+        {
+          "skillName": "Games",
+          "experienceInYears": "3",
+          "proficiency": "beginner"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Varaprasad",
+      "contactPreference": "email",
+      "email": "srimalyadritaxiservices@gmail.com",
+      "phone": "9494770008",
+      "skills": [
+        {
+          "skillName": "Angular",
+          "experienceInYears": "12",
+          "proficiency": "advanced"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Vinod",
+      "contactPreference": "email",
+      "email": "srimalyadritaxiservices@gmail.com",
+      "phone": "9898098709",
+      "skills": [
+        {
+          "skillName": "Angular",
+          "experienceInYears": "3",
+          "proficiency": "advanced"
+        },
+        {
+          "skillName": "C",
+          "experienceInYears": "4",
+          "proficiency": "intermediate"
+        },
+        {
+          "skillName": "C",
+          "experienceInYears": "5",
+          "proficiency": "intermediate"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Ranveer Singh",
+      "contactPreference": "phone",
+      "email": "ranveer@gmail.com",
+      "phone": "9494770004",
+      "skills": [
+        {
+          "skillName": "Games",
+          "experienceInYears": "34",
+          "proficiency": "advanced"
+        },
+        {
+          "skillName": "C",
+          "experienceInYears": "1",
+          "proficiency": "beginner"
+        },
+        {
+          "skillName": "Actor",
+          "experienceInYears": "12",
+          "proficiency": "intermediate"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Virat Kohlii",
+      "contactPreference": "phone",
+      "email": "viratKohli@gmail.com",
+      "phone": "9898098709",
+      "skills": [
+        {
+          "skillName": "Angular",
+          "experienceInYears": "2",
+          "proficiency": "beginner"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "breaking bad",
+      "contactPreference": "email",
+      "email": "varaprasad0280@gmail.com",
+      "phone": "9898098705",
+      "skills": [
+        {
+          "skillName": "Games",
+          "experienceInYears": "3",
+          "proficiency": "intermediate"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Prision Break",
+      "contactPreference": "email",
+      "email": "srimalyadritaxiservices@gmail.com",
+      "phone": "9494770004",
+      "skills": [
+        {
+          "skillName": "Angular",
+          "experienceInYears": "23",
+          "proficiency": "advanced"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Varaprasad Yadav",
+      "contactPreference": "email",
+      "email": "varaprasad0281@gmail.com",
+      "phone": "9898098709",
+      "skills": [
+        {
+          "skillName": "Angular",
+          "experienceInYears": "3",
+          "proficiency": "intermediate"
+        }
+      ]
+    }
+  ]
+}

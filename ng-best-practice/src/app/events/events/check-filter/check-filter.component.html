@@ -1,0 +1,38 @@
+<div class="accordion">
+  <div class="card">
+    <div class="card-header p-0">
+      <button
+        class="btn btn-light btn-block text-left"
+        data-toggle="collapse"
+        aria-expanded="false"
+        (click)="isCollapsed = !isCollapsed"
+      >
+        <i *ngIf="!isCollapsed" class="fa fa-arrow-down" aria-hidden="true"></i>
+        <i *ngIf="isCollapsed" class="fa fa-arrow-up" aria-hidden="true"></i>
+        Continents
+      </button>
+    </div>
+    <div class="collapse" [ngClass]="{ show: isCollapsed }">
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <span
+              *ngFor="let continent of continents$ | async"
+              class="form-check-inline"
+            >
+              <input
+                type="checkbox"
+                class="form-check-input"
+                [id]="continent._id"
+                (change)="filterContinents(continent._id)"
+              />
+              <label class="form-check-label" [attr.for]="continent._id">
+                {{ continent.name }}
+              </label>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ title }}</h4>
+  <button class="btn btn-sm btn-danger" (click)="bsModalRef.hide()"> X </button>
+</div>
+<div class="modal-body">
+  <ul *ngIf="employee">
+    {{
+      employee | json
+    }}
+  </ul>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">
+    {{ closeBtnName }}
+  </button>
+</div>

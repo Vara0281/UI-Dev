@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row mt-2">
+    <div class="form-group col-8">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search By Name"
+        [(ngModel)]="searchTerm"
+      />
+    </div>
+    <div class="col-4">
+      <button class="btn btn-success float-right" routerLink="create">
+        Create
+      </button>
+    </div>
+  </div>
+
+  <app-display-employee
+    *ngFor="let emp of filteredEmployees"
+    [emp]="emp"
+    [searchTerm]="searchTerm"
+    (notifyDelete)="onDeleteNotification($event)"
+  >
+  </app-display-employee>
+</div>

@@ -1,0 +1,29 @@
+nav {
+  color: #000;
+  background-color: #e3f2fd;
+}
+
+nav a {
+  color: #000;
+  cursor: pointer;
+}
+nav .active {
+  color: #0000ff;
+}
+
+.dropdown-menu {
+  background-color: #e3f2fd;
+  animation: fade 0.2s linear;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.6;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

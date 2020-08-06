@@ -1,0 +1,25 @@
+<div class="row m-2">
+  <app-check-filter
+    class="col-md-6"
+    (checkedContinents)="filterContinents($event)"
+  ></app-check-filter>
+  <app-radio-filter
+    class="col-md-6"
+    (price)="filterPrice($event)"
+  ></app-radio-filter>
+</div>
+
+<div class="row m-3">
+  <div class="col-md-4 mb-3" *ngFor="let event of filtredEvents">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">{{ event.name }}</h5>
+        <p class="card-text">{{ event.description }} - {{ event.price }}</p>
+        <a href="#" class="btn btn-primary">Buy Tickets</a>
+      </div>
+      <div class="card-footer text-muted">
+        {{ event.date | date: "shortDate" }}
+      </div>
+    </div>
+  </div>
+</div>
