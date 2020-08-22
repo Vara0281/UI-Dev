@@ -23,14 +23,12 @@ const Course = mongoose.model(
 
 async function createAuthor(name, bio, website) {
   const author = new Author({ name, bio, website });
-
   const result = await author.save();
   console.log(result);
 }
 
 async function createCourse(name, author) {
   const course = new Course({ name, author });
-
   const result = await course.save();
   console.log(result);
 }
@@ -42,8 +40,7 @@ async function listCourses() {
   console.log(courses);
 }
 
-// createAuthor("Mosh", "My bio", "My Website");
-
-// createCourse("Node Course", "5e88e8bb8a2cd016844d31d0");
+// createAuthor("Mosh2", "My bio", "My Website");
+createCourse("Node Course", "5f40ecb4d0fc610bc0d66fb6");
 
 listCourses();

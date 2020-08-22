@@ -34,6 +34,7 @@ router.post("/", upload.single("avatar"), async (req, res, next) => {
 
     let customer = new Customer({ ...req.body, avatar });
     customer = await customer.save();
+
     res.send(customer);
   } catch (error) {
     next(error);
@@ -45,7 +46,7 @@ router.put("/:id", upload.single("avatar"), async (req, res, next) => {
     const { error } = validate(req.body);
     if (error) throw createError(422, error.details[0].message);
 
-    let customer = await Customer.findById(req.params.id, { __v: 0 });
+    let customer = await Customer.findById(req.params.id);
     if (!customer)
       throw createError(400, "The customer With The given ID Was not found");
 
@@ -84,6 +85,7 @@ router.delete("/:id", async (req, res) => {
   fs.unlink(imageUrl, (err) => {
     if (err) throw err;
   });
+
   res.send(customer);
 });
 
