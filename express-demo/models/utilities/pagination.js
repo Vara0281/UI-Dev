@@ -12,9 +12,9 @@ const companySchema = new mongoose.Schema({
   location: { type: locationSchema, required: true },
 });
 
-const employeeSchema = new mongoose.Schema({
+const paginateSchema = new mongoose.Schema({
   index: Number,
-  name: { type: String, required: true, minlength: 2, maxlength: 50 },
+  name: String,
   isActive: { type: Boolean, default: false },
   registered: { type: Date, required: true, default: Date.now },
   age: { type: Number, min: 0 },
@@ -25,5 +25,5 @@ const employeeSchema = new mongoose.Schema({
   tags: Array,
 });
 
-const Employee = mongoose.model("Employee", employeeSchema);
-exports.Employee = Employee;
+const pagination = mongoose.model("pagination", paginateSchema);
+exports.pagination = pagination;

@@ -13,7 +13,7 @@ import { EmployeeDetails2Component } from '../employee-details2/employee-details
 })
 export class ListEmployee2Component implements OnInit {
   bsModalRef: BsModalRef;
-  employees: IEmployee[];
+  employees: IEmployee[] = [];
   order = false;
   constructor(
     private empService: Employee2Service, private modalService: BsModalService,
@@ -31,6 +31,7 @@ export class ListEmployee2Component implements OnInit {
     this.empService.getEmployees().subscribe(
       emp => {
         this.employees = emp;
+        console.log(this.employees);
       },
       err => console.log(err)
     );

@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class CreateEmployee2Component implements OnInit {
   employeeForm: FormGroup;
-  id: number;
+  id: string;
 
   constructor(
     private fb: FormBuilder, private aRoute: ActivatedRoute,
@@ -26,17 +26,17 @@ export class CreateEmployee2Component implements OnInit {
 
     this.aRoute.paramMap.subscribe(params => {
       if (params.has('id')) {
-        this.id = +params.get('id');
+        this.id = params.get('id');
         this.getEmployee(this.id);
       } else {
-        this.employeeForm.removeControl('id');
+        this.employeeForm.removeControl('_id');
       }
     });
   }
 
   createForm() {
     this.employeeForm = this.fb.group({
-      id: [''],
+      _id: [''],
       name: ['', [Validators.required, Validators.minLength(3)]],
       contactPreference: ['email'],
       email: ['', Validators.required],
@@ -81,7 +81,7 @@ export class CreateEmployee2Component implements OnInit {
     skillsFormArray.markAsDirty();
   }
 
-  getEmployee(id: number) {
+  getEmployee(id: string) {
     this.empService.getEmployee(id).subscribe(
       emp => this.editEmployeeForm(emp),
       error => {
@@ -130,10 +130,10 @@ export class CreateEmployee2Component implements OnInit {
         );
     } else {
       const { confirmemail, ...employee } = this.employeeForm.value;
+      console.log(employee);
       this.empService.addEmployee(employee)
         .subscribe(
           (res) => {
-            console.log(res);
             this.toastr.success(`Employee Added Succesfully`);
             this.employeeForm.reset();
             this.router.navigate(['forms/reactiveform']);

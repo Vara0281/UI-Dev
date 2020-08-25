@@ -13,6 +13,7 @@ const users = require("../routes/users");
 const auth = require("../routes/auth");
 const events = require("../routes/utilities/events");
 const paginate = require("../routes/utilities/pagination");
+const employees = require("../routes/utilities/employee");
 
 module.exports = function (app) {
   app.use(cors());
@@ -31,6 +32,7 @@ module.exports = function (app) {
   app.use("/api/auth", auth);
   app.use("/api/events", events);
   app.use("/api/paginate", paginate);
+  app.use("/api/employees", employees);
 
   app.use((req, res, next) => {
     next(createError(404, "Route Not Found"));

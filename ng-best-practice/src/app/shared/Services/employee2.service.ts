@@ -8,7 +8,7 @@ import { IEmployee } from 'app/shared/models/IEmployee';
   providedIn: 'root'
 })
 export class Employee2Service {
-  baseUrl = 'http://localhost:3000/employees2';
+  baseUrl = 'http://localhost:3000/api/employees';
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +17,7 @@ export class Employee2Service {
       .pipe(catchError(this.handleError));
   }
 
-  getEmployee(id: number): Observable<IEmployee> {
+  getEmployee(id: string): Observable<IEmployee> {
     return this.http.get<IEmployee>(`${this.baseUrl}/${id}`)
       .pipe(catchError(this.handleError));
   }
@@ -32,9 +32,9 @@ export class Employee2Service {
       .pipe(catchError(this.handleError));
   }
 
-  updateEmployee(employee: IEmployee): Observable<void> {
+  updateEmployee(employee: IEmployee): Observable<any> {
     return this.http
-      .put<void>(`${this.baseUrl}/${employee._id}`, employee, {
+      .put<any>(`${this.baseUrl}/${employee._id}`, employee, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json'
         })
