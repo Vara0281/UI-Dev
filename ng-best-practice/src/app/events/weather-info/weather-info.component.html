@@ -1,0 +1,30 @@
+<div class="container text-center">
+  <h1>Weather data</h1>
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <button class="btn btn-primary" (click)="dayChanges$.next(-1)">
+        {{ previousDate$ | async | date }}
+      </button>
+    </div>
+    <div class="col-md-4">
+      <h2>
+        {{ currentDate$ | async | date }}
+      </h2>
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-primary" (click)="dayChanges$.next(1)">
+        {{ nextDate$ | async | date }}
+      </button>
+    </div>
+  </div>
+</div>
+<div class="mt-4 text-center">
+  <h1 class="text-danger">{{ (weatherData$ | async)?.temp || 32 }}° C</h1>
+  <div class="row">
+    <div class="col-md-6">
+      Rain :
+      {{ (weatherData$ | async)?.rain }}
+    </div>
+    <div class="col-md-6">Amantaav : {{ (weatherData$ | async)?.desc }}</div>
+  </div>
+</div>

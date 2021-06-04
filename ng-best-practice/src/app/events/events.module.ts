@@ -7,9 +7,10 @@ import { SpecialEventsComponent } from './special-events/special-events.componen
 import { AdminEventsComponent } from './admin-events/admin-events.component';
 import { CheckFilterComponent } from './events/check-filter/check-filter.component';
 import { RadioFilterComponent } from './events/radio-filter/radio-filter.component';
+import { WeatherInfoComponent } from './weather-info/weather-info.component';
 
 @NgModule({
-  declarations: [EventsComponent, SpecialEventsComponent, AdminEventsComponent, CheckFilterComponent, RadioFilterComponent],
+  declarations: [EventsComponent, SpecialEventsComponent, AdminEventsComponent, CheckFilterComponent, RadioFilterComponent, WeatherInfoComponent],
   imports: [
     CommonModule,
     EventsRoutingModule

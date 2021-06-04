@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Moment } from 'moment';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
-@Injectable()
-export class EmployeeArrayService {
+@Injectable({
+  providedIn: 'root'
+})
+export class UtilityService {
   private listEmployees = [
     {
       id: 1,
@@ -68,5 +71,16 @@ export class EmployeeArrayService {
     if (i !== -1) {
       this.listEmployees.splice(i, 1);
     }
+  }
+
+  loadData(date: Moment): Observable<any> {
+    const reqDate = date.format('YYYY-MM-DD');
+    const randomTemp = Math.floor(Math.random() * 20) + 31;
+    const rain = (randomTemp % 2) ? 'Yes' : 'No';
+    const desc = (randomTemp % 3) ? 'Vatundi' : 'Raadu';
+
+    return new Observable(observer =>
+      observer.next({ temp: randomTemp, date: reqDate, rain, desc })
+    );
   }
 }

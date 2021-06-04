@@ -5,9 +5,11 @@ import { SpecialEventsComponent } from './special-events/special-events.componen
 import { AdminEventsComponent } from './admin-events/admin-events.component';
 import { AuthGuard } from 'app/auth/auth.guard';
 import { AdminAuthGuard } from 'app/auth/admin-auth.guard';
+import { WeatherInfoComponent } from './weather-info/weather-info.component';
 
 const routes: Routes = [
   { path: '', component: EventsComponent },
+  { path: 'weather', component: WeatherInfoComponent },
   {
     path: 'special', component: SpecialEventsComponent,
     canActivate: [AuthGuard]

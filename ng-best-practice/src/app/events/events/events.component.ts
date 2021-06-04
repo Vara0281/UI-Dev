@@ -12,6 +12,7 @@ export class EventsComponent implements OnInit {
   filterVariables = { continents: [], price: [] };
 
   constructor(private eventService: EventService) { }
+
   filterContinents(continents: number[]) {
     this.filterVariables.continents = continents;
     this.filter();

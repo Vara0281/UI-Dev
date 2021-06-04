@@ -17,6 +17,7 @@ export class GridComponent implements OnInit {
       checkboxSelection: true, editable: true
     },
     { headerName: 'Name', field: 'name', sortable: true, filter: true },
+    // { headerName: 'Name', field: 'name', sortable: true, filter: 'agTextColumnFilter' },
     { headerName: 'Gender', field: 'gender', sortable: true, width: 120 },
     { headerName: 'Email', field: 'company.email', sortable: true, filter: true },
     { headerName: 'Phone', field: 'company.phone', sortable: true, filter: true },

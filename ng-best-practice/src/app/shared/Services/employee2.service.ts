@@ -17,7 +17,7 @@ export class Employee2Service {
       .pipe(catchError(this.handleError));
   }
 
-  getEmployee(id: string): Observable<IEmployee> {
+  getEmployee(id: string | number): Observable<IEmployee> {
     return this.http.get<IEmployee>(`${this.baseUrl}/${id}`)
       .pipe(catchError(this.handleError));
   }
