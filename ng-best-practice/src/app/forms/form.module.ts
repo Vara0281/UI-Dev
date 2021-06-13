@@ -27,7 +27,8 @@ import { PaginateComponent } from './paginate/paginate.component';
     CreateEmployee2Component,
     ListEmployee2Component,
     GridComponent,
-    PaginateComponent, EmployeeDetails2Component
+    PaginateComponent,
+    EmployeeDetails2Component
   ],
   imports: [
     SharedModule,
