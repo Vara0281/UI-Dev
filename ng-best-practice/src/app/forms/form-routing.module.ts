@@ -20,8 +20,8 @@ const routes: Routes = [
       { path: 'employee/:id', component: EmployeeDetailsComponent },
 
       { path: 'reactiveform', component: ListEmployee2Component },
-      { path: 'create2', component: CreateEmployee2Component },
-      { path: 'edit2/:id', component: CreateEmployee2Component },
+      { path: 'create2', component: CreateEmployee2Component, canDeactivate: [EmpFormAuthGuard] },
+      { path: 'edit2/:id', component: CreateEmployee2Component, canDeactivate: [EmpFormAuthGuard] },
     ]
   },
   { path: 'grid', component: GridComponent },

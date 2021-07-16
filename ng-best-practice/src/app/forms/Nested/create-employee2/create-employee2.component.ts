@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IEmployee, ISkill } from '@shared/models/IEmployee';
+import { SafeData } from '@shared/models/Safe-data.interface';
 import { Employee2Service } from '@shared/Services/employee2.service';
 import { compareValidator } from '@shared/Validators/compare-validator.directive';
 import { ToastrService } from 'ngx-toastr';
@@ -11,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './create-employee2.component.html',
   styleUrls: ['./create-employee2.component.css']
 })
-export class CreateEmployee2Component implements OnInit {
+export class CreateEmployee2Component implements OnInit, SafeData {
   employeeForm: FormGroup;
   id: string;
 
@@ -20,6 +21,10 @@ export class CreateEmployee2Component implements OnInit {
     private empService: Employee2Service, private router: Router,
     private toastr: ToastrService
   ) { }
+
+  isDataSaved(): boolean {
+    return this.employeeForm.dirty;
+  }
 
   ngOnInit() {
     this.createForm();

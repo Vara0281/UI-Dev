@@ -6,13 +6,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { ToastrService } from 'ngx-toastr';
+import { SafeData } from '@shared/models/Safe-data.interface';
 
 @Component({
   selector: 'app-create-employee',
   templateUrl: './create-employee.component.html',
   styleUrls: ['./create-employee.component.css']
 })
-export class CreateEmployeeComponent implements OnInit {
+export class CreateEmployeeComponent implements OnInit, SafeData {
 
   @ViewChild('employeeForm') public createEmployeeForm: NgForm;
   id: string;
@@ -34,6 +35,11 @@ export class CreateEmployeeComponent implements OnInit {
     this.datePickerConfig = Object.assign(
       {}, { containerClass: 'theme-dark-blue', dateInputFormat: 'DD/MM/YYYY' }
     );
+  }
+
+  // for canDeactivate Gaurd
+  isDataSaved(): boolean {
+    return this.createEmployeeForm.dirty;
   }
 
   ngOnInit() {
