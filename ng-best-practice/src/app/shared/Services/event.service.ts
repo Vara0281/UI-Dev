@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,10 @@ export class EventService {
 
   getEvents() {
     return this.http.get<any>(this.eventsUrl);
+  }
+
+  getEventById(id: number) {
+    return this.http.get<any>(`${this.eventsUrl}/byid/${id}`).pipe(delay(2000));
   }
 
   getSpecialEvents() {

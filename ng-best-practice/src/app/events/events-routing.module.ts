@@ -6,10 +6,16 @@ import { AdminEventsComponent } from './admin-events/admin-events.component';
 import { AuthGuard } from 'app/auth/auth.guard';
 import { AdminAuthGuard } from 'app/auth/admin-auth.guard';
 import { WeatherInfoComponent } from './weather-info/weather-info.component';
+import { DisplayEventComponent } from './events/display-event/display-event.component';
+import { EventResolver } from './events/event.resolver';
 
 const routes: Routes = [
   { path: '', component: EventsComponent },
-  { path: 'weather', component: WeatherInfoComponent },
+  {
+    path: 'event/:id', component: DisplayEventComponent, resolve: {
+      event: EventResolver
+    }
+  },
   {
     path: 'special', component: SpecialEventsComponent,
     canActivate: [AuthGuard]
@@ -18,6 +24,7 @@ const routes: Routes = [
     path: 'admin', component: AdminEventsComponent,
     canActivate: [AuthGuard, AdminAuthGuard]
   },
+  { path: 'weather', component: WeatherInfoComponent },
 ];
 
 @NgModule({

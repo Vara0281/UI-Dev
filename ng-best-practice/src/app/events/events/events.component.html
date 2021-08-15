@@ -1,3 +1,13 @@
+<div class="mb-2">
+  <progressbar
+    max="100"
+    [value]="100"
+    [striped]="true"
+    [animate]="true"
+    *ngIf="isLoading$ | async"
+  ></progressbar>
+</div>
+
 <div class="row m-2">
   <app-check-filter
     class="col-md-6"
@@ -15,7 +25,9 @@
       <div class="card-body">
         <h5 class="card-title">{{ event.name }}</h5>
         <p class="card-text">{{ event.description }} - {{ event.price }}</p>
-        <a href="#" class="btn btn-primary">Buy Tickets</a>
+        <a [routerLink]="['./event', event._id]" class="btn btn-primary"
+          >Buy Tickets</a
+        >
       </div>
       <div class="card-footer text-muted">
         {{ event.date | date: "shortDate" }}

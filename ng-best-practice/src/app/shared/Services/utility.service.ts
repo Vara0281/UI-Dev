@@ -77,7 +77,7 @@ export class UtilityService {
     const reqDate = date.format('YYYY-MM-DD');
     const randomTemp = Math.floor(Math.random() * 20) + 31;
     const rain = (randomTemp % 2) ? 'Yes' : 'No';
-    const desc = (randomTemp % 3) ? 'Vatundi' : 'Raadu';
+    const desc = (randomTemp % 3) ? 'Vastundi' : 'Raadu';
 
     return new Observable(observer =>
       observer.next({ temp: randomTemp, date: reqDate, rain, desc })
